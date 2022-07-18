@@ -9,13 +9,15 @@ document.getElementById("save-button").addEventListener("click", () => {
 
 window.onload = function () {
     browser.storage.local.get(["preferred"], (result) => {
-        if (result) {
-            preferredInput.value = result.preferred
+        const preferred = result.preferred
+        if (preferred) {
+            preferredInput.value = preferred
         }
     })
     browser.storage.local.get(["undesired"], (result) => {
-        if (result) {
-            undesiredInput.value = result.undesired
+        const undesired = result.undesired
+        if (undesired) {
+            undesiredInput.value = undesired
         }
     })
 }
